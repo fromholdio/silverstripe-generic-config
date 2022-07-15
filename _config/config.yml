@@ -14,4 +14,4 @@ Only:
 
 Fromholdio\GenericConfig\Model\GenericConfig:
   extensions:
-    menuSetHelper: Fromholdio\GenericConfig\Extensions\MenuSetGenericHelper
+    menuSetHelper: Fromholdio\GenericConfig\Extensions\MenuSetGenericConfigHelper
