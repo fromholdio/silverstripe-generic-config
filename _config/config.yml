@@ -1,0 +1,17 @@
+---
+Name: fromholdio-generic-config
+---
+
+
+---
+Name: fromholdio-generic-config-menusethelper
+Only:
+  moduleexists:
+    - 'fromholdio/silverstripe-superlinker-menus'
+    - 'symbiote/silverstripe-gridfieldextensions'
+    - 'silverstripe/versioned'
+---
+
+Fromholdio\GenericConfig\Model\GenericConfig:
+  extensions:
+    menuSetHelper: Fromholdio\GenericConfig\Extensions\MenuSetGenericHelper

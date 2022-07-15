@@ -1,0 +1,28 @@
+{
+  "name": "fromholdio/silverstripe-generic-config",
+  "type": "silverstripe-vendormodule",
+  "description": "",
+  "license": "BSD-3-Clause",
+  "keywords": ["silverstripe"],
+  "homepage": "https://github.com/fromholdio/silverstripe-generic-config",
+  "support": {
+    "issues": "https://github.com/fromholdio/silverstripe-generic-config/issues"
+  },
+  "authors": [{
+    "name": "Luke Fromhold",
+    "homepage": "https://fromhold.io"
+  }],
+  "require": {
+    "silverstripe/vendor-plugin": "^1.0",
+    "silverstripe/framework": "^4.1",
+    "littlegiant/silverstripe-singleobjectadmin": "^2.3",
+    "stevie-mayhew/hasoneedit": "^2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Fromholdio\\GenericConfig\\": "src/"
+    }
+  },
+  "prefer-stable": true,
+  "minimum-stability": "dev"
+}
