@@ -15,9 +15,19 @@ abstract class GenericConfigAdmin extends SingleObjectAdmin
     private static $menu_icon = null;
     private static $menu_icon_class = 'font-icon-cog';
 
+    private static $allowed_actions = [
+        'EditForm',
+        'ItemEditForm'
+    ];
+
     private static $extensions = [
         UpdateFormExtension::class
     ];
+
+    public function ItemEditForm()
+    {
+        return $this->EditForm();
+    }
 
     public function canView($member = null)
     {
