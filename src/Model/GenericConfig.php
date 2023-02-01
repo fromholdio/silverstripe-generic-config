@@ -2,6 +2,7 @@
 
 namespace Fromholdio\GenericConfig\Model;
 
+use SilverStripe\Control\Director;
 use SilverStripe\Core\ClassInfo;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\TabSet;
@@ -17,6 +18,8 @@ class GenericConfig extends DataObject implements TemplateGlobalProvider
     private static $table_name = 'Config_Generic';
     private static $singular_name = 'General configuration';
     private static $plural_name = 'General configurations';
+
+    private static $generic_config_admin_class;
 
     private static $has_one = [
         'SiteConfig' => SiteConfig::class
@@ -96,6 +99,18 @@ class GenericConfig extends DataObject implements TemplateGlobalProvider
             $this->setField('SiteConfigID', $siteConfig->ID);
         }
         parent::onBeforeWrite();
+    }
+
+    public function CMSEditLink(): ?string
+    {
+        $link = null;
+        $adminClass = static::config()->get('generic_config_admin_class');
+        if (!empty($adminClass) && class_exists($adminClass)) {
+            $admin = $adminClass::singleton();
+            $link = $admin->Link();
+            return Director::absoluteURL($link);
+        }
+        return $link;
     }
 
 
