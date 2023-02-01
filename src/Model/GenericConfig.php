@@ -111,7 +111,7 @@ class GenericConfig extends DataObject implements TemplateGlobalProvider
                 TabSet::create('MainTabSet', 'Main')
             )
         );
-        $fields->extend('updateCMSFields', $fields);
+        $this->extend('updateCMSFields', $fields);
         return $fields;
     }
 
